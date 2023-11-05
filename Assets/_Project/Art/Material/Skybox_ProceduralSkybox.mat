@@ -12,7 +12,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - FUZZY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -22,21 +23,69 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _BaseNoise:
+        m_Texture: {fileID: 2800000, guid: 3302af6ced6036b4f9d7484e1ff3ef8f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Distort:
+        m_Texture: {fileID: 2800000, guid: c6a160aa061dc1a428f0c90d66c56454, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecNoise:
+        m_Texture: {fileID: 2800000, guid: 3677ab572296a9d409b19c96ddfa895a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Stars:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BaseNoiseScale: 0.425
+    - _Brightness: 2.66
+    - _CloudCutoff: 0.4
+    - _DistortScale: 0.074
+    - _Distortion: 1
+    - _FUZZY: 1
+    - _Fuzziness: 0.09
+    - _FuzzinessUnder: 0.1
+    - _HorizonIntensity: 5.44
+    - _MoonOffset: -1
+    - _MoonRadius: 0.1
+    - _OffsetHorizon: 0.146
+    - _SecNoiseScale: 0.075
     - _SkyExponent1: 8.5
     - _SkyExponent2: 3
     - _SkyIntensity: 1
+    - _Speed: 2.3
+    - _StarsCutoff: 0.099
+    - _StarsSpeed: 0.28
     - _SunAlpha: 550
     - _SunAltitude: 38
     - _SunAzimuth: 20
     - _SunBeta: 1
     - _SunIntensity: 2
+    - _SunRadius: 0.103
     m_Colors:
+    - _CloudColorDayEdge: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 1}
+    - _CloudColorDayMain: {r: 0.43529415, g: 0.58431375, b: 1, a: 1}
+    - _CloudColorDayUnder: {r: 0.6745098, g: 0.6745098, b: 0.6745098, a: 1}
+    - _CloudColorNightEdge: {r: 0, g: 1, b: 1, a: 1}
+    - _CloudColorNightMain: {r: 0.023529414, g: 0.03529412, b: 0.09411766, a: 1}
+    - _CloudColorNightUnder: {r: 0.039215688, g: 0.12941177, b: 0.2784314, a: 1}
+    - _DayBottomColor: {r: 0.23, g: 0.72, b: 0.56, a: 1}
+    - _DayTopColor: {r: 0.5, g: 0.6, b: 1, a: 1}
+    - _HorizonColorDay: {r: 0.7568628, g: 0.5921569, b: 0.454902, a: 1}
+    - _HorizonColorNight: {r: 0, g: 0.10196079, b: 0.57254905, a: 1}
+    - _MoonColor: {r: 1, g: 0.9803922, b: 0.89019614, a: 1}
+    - _NightBottomColor: {r: 0, g: 0, b: 0.2, a: 1}
+    - _NightTopColor: {r: 0, g: 0, b: 0, a: 1}
     - _SkyColor1: {r: 0.37, g: 0.52, b: 0.73, a: 0}
     - _SkyColor2: {r: 0.89, g: 0.96, b: 1, a: 0}
     - _SkyColor3: {r: 0.89, g: 0.89, b: 0.89, a: 0}
-    - _SunColor: {r: 1, g: 0.99, b: 0.87, a: 1}
+    - _StarsSkyColor: {r: 0.003921569, g: 0.03529412, b: 0.10980393, a: 1}
+    - _SunColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SunSet: {r: 0.65882355, g: 0.26666668, b: 0.023529414, a: 1}
     - _SunVector: {r: 0.269, g: 0.615, b: 0.74, a: 0}
   m_BuildTextureStacks: []
