@@ -1,3 +1,4 @@
 {
-	"name": "Runner.Game"
+	"name": "Runner.Game",
+	"references":[ "GUID:d962cf4881b4ecd46bcca13a9ebe3082", "GUID:75a8f41fac3d1d1439341d3009e75cbc" ]
 }
