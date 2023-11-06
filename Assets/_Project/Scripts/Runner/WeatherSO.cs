@@ -5,8 +5,9 @@ namespace _Project.Scripts.Runner
 {
     [CreateAssetMenu(fileName = "Weather", menuName = "NetworkData/Weather")]
 
-    public class Weather : ScriptableObject
+    public class WeatherSO : ScriptableObject
     {
+        public string cityName;
         public float temperatureInCelsius;
         public float temperatureInFahrenheit;
         public DateTime sunriseTime;

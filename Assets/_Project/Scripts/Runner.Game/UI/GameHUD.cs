@@ -1,9 +1,6 @@
-﻿using _Project.Scripts.Runner.Game.Envrionment;
-using _Project.Scripts.Runner.Game.Network;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
+
 
 namespace _Project.Scripts.Runner.Game.UI
 {
@@ -13,23 +10,27 @@ namespace _Project.Scripts.Runner.Game.UI
         private CanvasGroup _canvasGroup;
         
         [SerializeField] private TMP_InputField cityInputField;
+        [SerializeField] private GameObject midPanel;
+        [SerializeField] private TextMeshProUGUI descriptionText;
         
-        private void Awake()
-        {
-            _canvasGroup = this.GetComponent<CanvasGroup>();
-        }
-        
+        public WeatherSO weatherData;
+       
+        private void Awake() => _canvasGroup = this.GetComponent<CanvasGroup>();
+
         public void OnFetchWeatherButtonClick()
         {
             string city = cityInputField.text;
             if (!string.IsNullOrEmpty(city))
             {
-                
+                weatherData.cityName = city;
+                midPanel.SetActive(false);
+                descriptionText.text = city;
             }
             else
             {
                 Debug.LogWarning("Please enter a city name.");
             }
+            
         }
 
         public void Show()
