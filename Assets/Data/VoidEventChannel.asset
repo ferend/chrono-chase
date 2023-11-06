@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1c96af1eb54a2fa783ac77a727b562, type: 3}
-  m_Name: NetworkData
+  m_Script: {fileID: 11500000, guid: 2d4af00b8d4c4332b962da17603c68cb, type: 3}
+  m_Name: VoidEventChannel
   m_EditorClassIdentifier: 
-  apiKey: bd5e378503939ddaee76f12ad7a97608

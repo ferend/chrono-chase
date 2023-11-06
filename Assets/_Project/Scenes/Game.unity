@@ -503,8 +503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae3eabebfabefc438eed4b90bb6ce4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkDataSo: {fileID: 11400000, guid: 06c78668452decc4385e24d7b6702a5f, type: 2}
-  weatherSoData: {fileID: 11400000, guid: ab99ac6709824ae49b2185a376652850, type: 2}
+  networkData: {fileID: 11400000, guid: 06c78668452decc4385e24d7b6702a5f, type: 2}
+  weatherData: {fileID: 11400000, guid: ab99ac6709824ae49b2185a376652850, type: 2}
+  skyboxEventChannel: {fileID: 11400000, guid: e58e40d9729ee7644ad21d725187c6b3, type: 2}
 --- !u!1 &798230612
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   alternateSkybox: {fileID: 2100000, guid: b6a1e10d40096bf49b7bb42f54bdd70c, type: 2}
+  skyboxEventChannel: {fileID: 11400000, guid: e58e40d9729ee7644ad21d725187c6b3, type: 2}
 --- !u!4 &888110317
 Transform:
   m_ObjectHideFlags: 0

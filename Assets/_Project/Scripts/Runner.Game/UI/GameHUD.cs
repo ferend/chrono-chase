@@ -14,7 +14,7 @@ namespace _Project.Scripts.Runner.Game.UI
         [SerializeField] private TextMeshProUGUI descriptionText;
         
         public WeatherSO weatherData;
-       
+        
         private void Awake() => _canvasGroup = this.GetComponent<CanvasGroup>();
 
         public void OnFetchWeatherButtonClick()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Project.Scripts.Runner.Game.Envrionment
 {
@@ -7,7 +8,13 @@ namespace _Project.Scripts.Runner.Game.Envrionment
         [SerializeField] private Material defaultSkybox; // Set this in the Unity Inspector
         [SerializeField] private Material alternateSkybox; // Set this in the Unity Inspector
         private bool _isDefaultSkyboxActive = true;
-        
+        public VoidEventChannelSO skyboxEventChannel;
+
+        private void Start()
+        {
+            skyboxEventChannel.OnEventRaised += SetSkyboxData;
+        }
+
         public void SetSkyboxData()
         {
             // Switch the skybox when the button is clicked
