@@ -3,20 +3,17 @@ using System.Collections;
 using _Project.Scripts.Runner.Utilities;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Runner.Game.Network
 {
     public class NetworkManager : Manager
     {
-        private string city = "London"; // Replace with the desired city name
-        private WeatherData _weatherData;
+        public string city = ""; 
         public NetworkData networkData;
-
-        private void Start()
-        {
-            StartCoroutine(FetchWeatherData());
-        }
-
+        public Weather weatherData;
+        
+        
         private IEnumerator FetchWeatherData()
         {
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={networkData.apiKey}";
@@ -27,24 +24,21 @@ namespace _Project.Scripts.Runner.Game.Network
                 if (webRequest.result == UnityWebRequest.Result.Success)
                 {
                     string responseJson = webRequest.downloadHandler.text;
-                    _weatherData = JsonUtility.FromJson<WeatherData>(responseJson);
+                    WeatherData _weatherData = JsonUtility.FromJson<WeatherData>(responseJson);
 
                     if (_weatherData != null)
                     {
-                        // You can access weatherData properties here
-                        float kelvinTemperature = _weatherData.main.temp;
-                        float celsiusTemperature = kelvinTemperature.ToCelsius();
-                        float fahrenheitTemperature = kelvinTemperature.ToFahrenheit();
-                        Debug.Log($"Temperature in Celsius: {celsiusTemperature}°C");
-                        Debug.Log($"Temperature in Fahrenheit: {fahrenheitTemperature}°F");
-                        
-                        int sunriseTimestamp = _weatherData.sys.sunrise;
-                        DateTime sunriseTime = sunriseTimestamp.ToDateTime();
-                        int sunsetTimestamp = _weatherData.sys.sunset;
-                        DateTime sunsetTime = sunsetTimestamp.ToDateTime();
-                        
-                        Debug.Log($"Sunrise time: {sunriseTime}");                        
-                        Debug.Log($"Sunset time: {sunsetTime}");
+                        // Set the CityWeatherData ScriptableObject fields
+                        weatherData.temperatureInCelsius = _weatherData.main.temp.ToCelsius();
+                        weatherData.temperatureInFahrenheit = _weatherData.main.temp.ToFahrenheit();
+                        weatherData.sunriseTime = _weatherData.sys.sunrise.ToDateTime();
+                        weatherData.sunsetTime = _weatherData.sys.sunset.ToDateTime();
+
+                        // Log data (optional)
+                        Debug.Log($"Temperature in Celsius: {weatherData.temperatureInCelsius}°C");
+                        Debug.Log($"Temperature in Fahrenheit: {weatherData.temperatureInFahrenheit}°F");
+                        Debug.Log($"Sunrise time: {weatherData.sunriseTime}");
+                        Debug.Log($"Sunset time: {weatherData.sunsetTime}");
                     }
                     else
                     {
@@ -57,8 +51,8 @@ namespace _Project.Scripts.Runner.Game.Network
                 }
             }
         }
-        
 
+        public void SetCity(string newCity) => city = newCity;
+        
     }
-    
 }

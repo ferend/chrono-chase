@@ -1,4 +1,18 @@
 {
-	"name": "Runner.Game",
-	"references":[ "GUID:d962cf4881b4ecd46bcca13a9ebe3082", "GUID:75a8f41fac3d1d1439341d3009e75cbc" ]
+    "name": "Runner.Game",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d962cf4881b4ecd46bcca13a9ebe3082",
+        "GUID:75a8f41fac3d1d1439341d3009e75cbc",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
