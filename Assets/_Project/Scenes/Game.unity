@@ -576,6 +576,8 @@ MonoBehaviour:
   defaultSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   alternateSkybox: {fileID: 2100000, guid: b6a1e10d40096bf49b7bb42f54bdd70c, type: 2}
   skyboxEventChannel: {fileID: 11400000, guid: e58e40d9729ee7644ad21d725187c6b3, type: 2}
+  weatherData: {fileID: 11400000, guid: ab99ac6709824ae49b2185a376652850, type: 2}
+  obj: {fileID: 1087584180}
 --- !u!4 &888110317
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,7 +1700,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

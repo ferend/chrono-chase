@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518eaec27a0db98459ffbfc7f85c288c, type: 3}
   m_Name: Weather
   m_EditorClassIdentifier: 
+  cityName: 0
   temperatureInCelsius: 0
   temperatureInFahrenheit: 0

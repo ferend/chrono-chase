@@ -3,21 +3,20 @@ using System.Collections;
 using _Project.Scripts.Runner.Utilities;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Runner.Game.Network
 {
     public class NetworkManager : Manager
     {
-        private string city = ""; 
-        public NetworkDataSO networkData;
-        public WeatherSO weatherData;
+        private string _city = ""; 
+        [SerializeField] private NetworkDataSO networkData;
+        [SerializeField] private WeatherSO weatherData;
         
-        public VoidEventChannelSO skyboxEventChannel;
+        [SerializeField] private VoidEventChannelSO skyboxEventChannel;
 
         public void FetchRoutine()
         {
-            city = weatherData.cityName;
+            _city = weatherData.cityName;
             StartCoroutine(FetchWeatherData());
         }
         
@@ -25,7 +24,7 @@ namespace _Project.Scripts.Runner.Game.Network
         {
             yield return new WaitForSeconds(1f);
             
-            string url = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={networkData.apiKey}";
+            string url = $"https://api.openweathermap.org/data/2.5/weather?q={_city}&appid={networkData.apiKey}";
             using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
             {
                 yield return webRequest.SendWebRequest();
@@ -42,12 +41,14 @@ namespace _Project.Scripts.Runner.Game.Network
                         weatherData.temperatureInFahrenheit = _weatherData.main.temp.ToFahrenheit();
                         weatherData.sunriseTime = _weatherData.sys.sunrise.ToDateTime();
                         weatherData.sunsetTime = _weatherData.sys.sunset.ToDateTime();
+                        weatherData.currentTime = _weatherData.dt.ToDateTime();
 
                         // Log data (optional)
                         Debug.Log($"Temperature in Celsius: {weatherData.temperatureInCelsius}°C");
                         Debug.Log($"Temperature in Fahrenheit: {weatherData.temperatureInFahrenheit}°F");
                         Debug.Log($"Sunrise time: {weatherData.sunriseTime}");
                         Debug.Log($"Sunset time: {weatherData.sunsetTime}");
+                        Debug.Log($"Time {weatherData.currentTime}");
                         
                         skyboxEventChannel.RaiseEvent();
                         
@@ -63,6 +64,7 @@ namespace _Project.Scripts.Runner.Game.Network
                 }
             }
         }
+        
 
         
     }

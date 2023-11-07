@@ -1,9 +1,13 @@
-﻿namespace _Project.Scripts.Runner
+﻿using System;
+using UnityEngine;
+
+namespace _Project.Scripts.Runner
 {
     [global::System.Serializable]
     public class WeatherData
     {
         public MainData main;
+        public int dt;
         public SysData sys;
     }
 
@@ -11,7 +15,9 @@
     public class MainData
     {
         public float temp;
+
     }
+
     [global::System.Serializable]
     public class SysData
     {

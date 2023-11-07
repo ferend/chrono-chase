@@ -12,5 +12,6 @@ namespace _Project.Scripts.Runner
         public float temperatureInFahrenheit;
         public DateTime sunriseTime;
         public DateTime sunsetTime;
+        public DateTime currentTime;
     }
 }
