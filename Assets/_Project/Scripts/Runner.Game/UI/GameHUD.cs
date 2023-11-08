@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 
@@ -7,40 +8,21 @@ namespace _Project.Scripts.Runner.Game.UI
     [RequireComponent(typeof(CanvasGroup))]
     public class GameHUD : MonoBehaviour, IUIScreen
     {
-        private CanvasGroup _canvasGroup;
+        [SerializeField] private CanvasGroup canvasGroup;
         
-        [SerializeField] private TMP_InputField cityInputField;
-        [SerializeField] private GameObject midPanel;
-        [SerializeField] private TextMeshProUGUI descriptionText;
-        
-        public WeatherSO weatherData;
-        
-        private void Awake() => _canvasGroup = this.GetComponent<CanvasGroup>();
+        [SerializeField] private TextMeshProUGUI upperText;
+        [SerializeField] private WeatherSO weatherSo;
 
-        public void OnFetchWeatherButtonClick()
-        {
-            string city = cityInputField.text;
-            if (!string.IsNullOrEmpty(city))
-            {
-                weatherData.cityName = city;
-                midPanel.SetActive(false);
-                descriptionText.text = city;
-            }
-            else
-            {
-                Debug.LogWarning("Please enter a city name.");
-            }
-            
-        }
+        private void Start() => upperText.text = weatherSo.cityName;
 
         public void Show()
         {
-            _canvasGroup.alpha = 1;
+            canvasGroup.alpha = 1;
         }
 
         public void Hide()
         {
-            _canvasGroup.alpha = 0;
+            canvasGroup.alpha = 0;
         }
     }
 }

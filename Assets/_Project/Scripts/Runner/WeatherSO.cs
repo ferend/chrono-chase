@@ -13,5 +13,10 @@ namespace _Project.Scripts.Runner
         public DateTime sunriseTime;
         public DateTime sunsetTime;
         public DateTime currentTime;
+
+        private void OnDisable()
+        {
+            cityName = "";
+        }
     }
 }

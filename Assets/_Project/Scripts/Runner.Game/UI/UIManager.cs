@@ -1,20 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Runner.Game.UI
 {
     public class UIManager : Manager
     {
         private Dictionary<Type, IUIScreen> _screenDictionary = new Dictionary<Type, IUIScreen>();
-        
-        [SerializeField] internal GameHUD gameHUD;
-
-        public override void Setup()
-        {
-            RegisterScreen(gameHUD);
-        }
 
         public void ShowScreen<T>() where T : IUIScreen
         {

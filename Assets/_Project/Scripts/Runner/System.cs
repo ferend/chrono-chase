@@ -116,7 +116,7 @@ namespace _Project.Scripts.Runner
             }
             
             //?
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
 
         private void OnDestroy()

@@ -9,7 +9,6 @@ namespace _Project.Scripts.Runner.Game.Envrionment
         [SerializeField] private Material alternateSkybox; // Set this in the Unity Inspector
         private bool _isDefaultSkyboxActive = true;
         
-        [SerializeField] private VoidEventChannelSO skyboxEventChannel;
         [SerializeField] private WeatherSO weatherData;
 
         [SerializeField] private GameObject obj;
@@ -17,14 +16,10 @@ namespace _Project.Scripts.Runner.Game.Envrionment
         
         private void OnEnable()
         {
-            skyboxEventChannel.OnEventRaised += SetSkyboxData;
+            SetSkyboxData();
         }
 
-        private void OnDisable()
-        {
-            skyboxEventChannel.OnEventRaised -= SetSkyboxData;
 
-        }
 
         private void SetSkyboxData()
         {
