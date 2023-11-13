@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Project.Scripts.Runner.Game.UI
 {
@@ -13,7 +14,7 @@ namespace _Project.Scripts.Runner.Game.UI
         [SerializeField] private TextMeshProUGUI descriptionText;
         
         public WeatherSO weatherData;
-        public VoidEventChannelSO NetworkEventChannel;
+        public EventChannel EventChannel;
         
         private void Awake() =>  _canvasGroup = this.GetComponent<CanvasGroup>();
 
@@ -26,7 +27,7 @@ namespace _Project.Scripts.Runner.Game.UI
                 midPanel.SetActive(false);
                 descriptionText.text = city;
                 
-                NetworkEventChannel.RaiseEvent();
+                EventChannel.Raise();
             }
             else
             {

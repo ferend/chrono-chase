@@ -256,7 +256,7 @@ MonoBehaviour:
   midPanel: {fileID: 922802785}
   descriptionText: {fileID: 1778062055}
   weatherData: {fileID: 11400000, guid: ab99ac6709824ae49b2185a376652850, type: 2}
-  NetworkEventChannel: {fileID: 11400000, guid: e58e40d9729ee7644ad21d725187c6b3, type: 2}
+  EventChannel: {fileID: 11400000, guid: cfffe475af3f0fd44902556d8b409a21, type: 2}
 --- !u!1 &206923249
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e86f1de33d74bcda809c4d23916b815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHUD: {fileID: 0}
 --- !u!1 &484008998
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +674,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkData: {fileID: 11400000, guid: 06c78668452decc4385e24d7b6702a5f, type: 2}
   weatherData: {fileID: 11400000, guid: ab99ac6709824ae49b2185a376652850, type: 2}
-  NetworkEventChannel: {fileID: 11400000, guid: e58e40d9729ee7644ad21d725187c6b3, type: 2}
 --- !u!4 &1027044326
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,6 +1040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664311645}
   - component: {fileID: 1664311646}
+  - component: {fileID: 1664311647}
   m_Layer: 0
   m_Name: GameSystem
   m_TagString: Untagged
@@ -1082,6 +1081,35 @@ MonoBehaviour:
   _managers:
   - {fileID: 1027044325}
   - {fileID: 206923251}
+--- !u!114 &1664311647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664311644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebe1d322fa74aa48274ead81bf20d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: cfffe475af3f0fd44902556d8b409a21, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1027044325}
+        m_TargetAssemblyTypeName: _Project.Scripts.Runner.Game.Network.NetworkManager,
+          Runner.Game
+        m_MethodName: FetchRoutine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1756860049
 GameObject:
   m_ObjectHideFlags: 0

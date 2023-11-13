@@ -12,12 +12,9 @@ namespace _Project.Scripts.Runner.Game.Network
         [SerializeField] private NetworkDataSO networkData;
         [SerializeField] private WeatherSO weatherData;
        
-        public UnityAction OnFetchWeatherData; 
-        public VoidEventChannelSO NetworkEventChannel;
-
-        public override void Setup() => NetworkEventChannel.OnEventRaised += FetchRoutine;
-
-        private void FetchRoutine() => StartCoroutine(FetchWeatherData());
+        public UnityAction OnFetchWeatherData;
+        
+        public void FetchRoutine() => StartCoroutine(FetchWeatherData());
 
         private IEnumerator FetchWeatherData()
         {
