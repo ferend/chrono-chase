@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
-using UnityEngine.XR;
+
 
 public enum InputType
 {
@@ -11,7 +10,7 @@ public enum InputType
     All = 2
 }
 
-namespace Assets._Project.Scripts.Runner.Game.Input
+namespace _Project.Scripts.Runner.Game.Input
 {
     [CreateAssetMenu(menuName = "Create Swipe", fileName = "Swipe", order = 0)]
     public class Swipe : ScriptableObject
@@ -48,13 +47,13 @@ namespace Assets._Project.Scripts.Runner.Game.Input
         private float _startTime;
         private Vector2 _startPosition;
 
-        private PlayerInput _input;
+        private GameInput _input;
 
         private void OnEnable()
         {
             if(_input == null)
             {
-                _input = new PlayerInput();
+                _input = new GameInput();
             }
             
             _input.PlayerControls.Enable();
@@ -71,7 +70,6 @@ namespace Assets._Project.Scripts.Runner.Game.Input
         {
             if(_input!= null) _input.PlayerControls.Disable();
 
-                 
         }
 
 

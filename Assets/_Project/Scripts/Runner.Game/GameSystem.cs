@@ -1,6 +1,7 @@
 using System;
 using _Project.Scripts.Runner.Game.Network;
 using _Project.Scripts.Runner.Game.UI;
+using _Project.Scripts.Runner.Game.Input;
 using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Runner.Game
@@ -9,6 +10,7 @@ namespace _Project.Scripts.Runner.Game
     {
         private NetworkManager _networkManager;
         private UIManager _uiManager;
+        private InputManager _inputManager;
         
         public override void Setup()
         {
@@ -20,6 +22,7 @@ namespace _Project.Scripts.Runner.Game
         {
             _networkManager = GetManager<NetworkManager>();
             _uiManager = GetManager<UIManager>();
+            _inputManager = GetManager<InputManager>();
             _uiManager.Setup();
             _networkManager.Setup();
 

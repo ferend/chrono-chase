@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections;
+﻿
 using UnityEngine;
 
-namespace Assets._Project.Scripts.Runner.Game.Input
+namespace _Project.Scripts.Runner.Game.Input
 {
-    public class InputManager : MonoBehaviour
+    public class InputManager : Manager
     {
-        // Adjust this speed to control the movement speed
-        public float moveSpeed = 5f;
-        public Swipe swipe;
-        public Rigidbody rb;
-        
+        [SerializeField] private Swipe swipe;
+        [SerializeField] private GestureEventChannel onLaneChangeRequest;
+
         private void Start()
         {
             swipe.OnSwipe += OnSwiped;
         }
 
 
-        private void OnSwiped(Swipe.GestureData pos)
+        private void OnSwiped(Swipe.GestureData gesture)
         {
-            rb.velocity = pos.rawDirection.normalized * moveSpeed;
+            onLaneChangeRequest?.RaiseEvent(gesture);
         }
 
      
