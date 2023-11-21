@@ -3,6 +3,8 @@ using _Project.Scripts.Runner.Game.Network;
 using _Project.Scripts.Runner.Game.UI;
 using _Project.Scripts.Runner.Game.Input;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace _Project.Scripts.Runner.Game
 {
@@ -11,6 +13,7 @@ namespace _Project.Scripts.Runner.Game
         private NetworkManager _networkManager;
         private UIManager _uiManager;
         private InputManager _inputManager;
+        private List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
         
         public override void Setup()
         {
@@ -28,16 +31,21 @@ namespace _Project.Scripts.Runner.Game
 
         }
 
-   
+        public void StartTheGame()
+        {
+            Debug.Log("Entrypoint game started");
+        }
+
+
         void LoadGameScene()
         {
             SceneManager.sceneLoaded += OnGameSceneLoaded;
-            SceneManager.LoadScene("Game");
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Game", LoadSceneMode.Additive));
         }
 
         void OnGameSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            if (mode == LoadSceneMode.Single)
+            if (mode == LoadSceneMode.Additive)
             {
                 _uiManager.RegisterScreen(FindObjectOfType<GameHUD>());
                 _uiManager.ShowScreen<GameHUD>();
