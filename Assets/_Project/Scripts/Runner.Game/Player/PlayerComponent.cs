@@ -39,7 +39,7 @@ namespace _Project.Scripts.Runner.Game.Player
             if (this.transform != null)
             {
                 // Calculate the target position based on the current lane
-                Vector3 targetPosition = new Vector3(Mathf.Clamp(lane * 3, -3, 3), 1, -0.6F);
+                Vector3 targetPosition = new Vector3(0, 1, Mathf.Clamp(-lane * 3, -3, 3));
 
                 // Use Vector3.Lerp to smoothly interpolate between the current position and the target position
                 this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, Time.deltaTime * 10);
