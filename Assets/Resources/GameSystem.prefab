@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swipe: {fileID: 11400000, guid: 719265f56236cb8468fedb32576a264d, type: 2}
+  onLaneChangeRequest: {fileID: 11400000, guid: a2230fff515ef9b40a5582c331ea5d1c, type: 2}
 --- !u!1 &8051582867881286751
 GameObject:
   m_ObjectHideFlags: 0
