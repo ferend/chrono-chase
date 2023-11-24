@@ -33,7 +33,9 @@ namespace _Project.Scripts.Runner.Game
 
         public void StartTheGame()
         {
-            Debug.Log("Entrypoint game started");
+            string lastCity = PlayerPrefs.GetString("CityName");
+
+            Debug.Log("Entrypoint game started" + " Last city name " + lastCity);
         }
 
 

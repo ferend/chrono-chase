@@ -45,6 +45,8 @@ namespace _Project.Scripts.Runner.Game.Network
                         Debug.Log($"Sunrise time: {weatherData.sunriseTime}");
                         Debug.Log($"Sunset time: {weatherData.sunsetTime}");
                         Debug.Log($"Time {weatherData.currentTime}");
+
+                        PlayerPrefs.SetString("CityName" , weatherData.cityName);
                         
                         OnFetchWeatherData?.Invoke();
                         
