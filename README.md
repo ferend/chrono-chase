@@ -15,6 +15,9 @@ Take control of your fearless runner as you dash through stunning landscapes whe
 <img src="github_data/tokyo.jpg" width="300" /> <img src="github_data/gamess.jpg" width="300" /> <img src="github_data/codess.jpg" width="600" />
 
 ## Demo
+https://github.com/ferend/chrono-chase/assets/74188001/fb25ff84-de42-45b4-8efc-9857639053a0
+
+
 
 ## Features
 - This project is mainly for how UnityWebRequest API works and how external javascript code or custom plugins can be integrated into Unity architecture.
